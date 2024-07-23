@@ -39,44 +39,6 @@
   ],
   "3": [
     {
-      "message_id": 2,
-      "message": "Hey there, I'd like to pick up a prescription."
-    },
-    {
-      "message_id": 4,
-      "message": "Thank you."
-    },
-    {
-      "message_id": 6,
-      "message": "Are there any side effects?"
-    },
-    {
-      "message_id": 8,
-      "message": "Thanks. How about this bottle?"
-    },
-    {
-      "message_id": 10,
-      "message": "Do you have any anti-itch medication?"
-    },
-    {
-      "message_id": 12,
-      "message": "One more thing. I just come from Thailand on a long flight and I'm having trouble sleeping."
-    },
-    {
-      "message_id": 14,
-      "message": "Great. I hate taking sleeping pills."
-    },
-    {
-      "message_id": 16,
-      "message": "Yes. I also need some toiletries."
-    },
-    {
-      "message_id": 18,
-      "message": "Thank you."
-    }
-  ],
-  "3": [
-    {
       "message_id": 1,
       "message": "Can I help you?"
     },
@@ -129,24 +91,6 @@
     {
       "message_id": 12,
       "message": "Have a good day."
-    }
-  ],
-  "7": [
-    {
-      "message_id": 1,
-      "message": "I'd like to pay my bill, please."
-    },
-    {
-      "message_id": 3,
-      "message": "Well, okay then. Can I pay with my card?"
-    },
-    {
-      "message_id": 5,
-      "message": "Sure. Here you are."
-    },
-    {
-      "message_id": 7,
-      "message": "No. Thank you. Have a great day."
     }
   ],
   "6": [
