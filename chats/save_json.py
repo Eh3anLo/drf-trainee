@@ -8,7 +8,7 @@ def save_json_from_file(filename):
         for value in data_post.values():
             for data in value:
                 cleaned_data.append(data)
-    serializer = ChatSerializer(data={'heel' : 'noe'})
+    serializer = ChatSerializer(cleaned_data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
     print("Save from file completed ...")
