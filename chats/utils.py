@@ -10,7 +10,3 @@ def custom_sort(data):
         if not swapped:
             continue
     return dict(data)
-
-
-
-    
