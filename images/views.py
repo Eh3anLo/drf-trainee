@@ -22,8 +22,10 @@ class CustomRenderer(renderers.JSONRenderer):
         return super().render(response_data, accepted_media_type, renderer_context)
 
 
+
 class ImageApiView(APIView):
     renderer_classes = [CustomRenderer]
+
 
     def post(self, request):
         serializer = ImageSerializer(data=request.data) 
@@ -35,6 +37,7 @@ class ImageApiView(APIView):
         up_image.save()
         return Response(status=HTTP_200_OK)
     
+
     def get(self,reqeust):
         images_queryset = Images.objects.all()
         serializer = ImageSerializer(images_queryset, many=True)
