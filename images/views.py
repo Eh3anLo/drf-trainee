@@ -12,13 +12,13 @@ from .models import Images
 
 class CustomRenderer(renderers.JSONRenderer):
     def render(self, data, accepted_media_type=None, renderer_context=None):
-        print(type(settings.DOMAIN))
         response_data = {}
-        new_row = {}
-        for items in data:
-            keys_list = list(items.keys())
-            new_row[int(items['id'])] = {keys_list[1]: settings.DOMAIN+str(items[keys_list[1]]) , keys_list[2]: settings.DOMAIN+str(items[keys_list[2]])}
-        response_data['images'] = new_row
+        if data:
+            new_row = {}
+            for items in data:
+                keys_list = list(items.keys())
+                new_row[int(items['id'])] = {keys_list[1]: settings.DOMAIN+str(items[keys_list[1]]) , keys_list[2]: settings.DOMAIN+str(items[keys_list[2]])}
+            response_data['images'] = new_row
         return super().render(response_data, accepted_media_type, renderer_context)
 
 
@@ -33,7 +33,7 @@ class ImageApiView(APIView):
         up_image = get_object_or_404(Images, id=img.id)
         up_image.processed_image = image_path
         up_image.save()
-        return Response(serializer.errors)
+        return Response(status=HTTP_200_OK)
     
     def get(self,reqeust):
         images_queryset = Images.objects.all()
