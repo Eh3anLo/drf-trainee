@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Images
+from .models import Image
 
 class ImageSerializer(serializers.Serializer):
     id =  serializers.IntegerField(required=False)
@@ -11,4 +11,4 @@ class ImageSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         print("saveded")
-        return Images.objects.create(**validated_data)
+        return Image.objects.create(**validated_data)
