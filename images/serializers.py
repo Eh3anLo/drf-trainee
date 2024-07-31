@@ -6,6 +6,7 @@ class ImageSerializer(serializers.Serializer):
     id =  serializers.IntegerField(required=False)
     origin_image = serializers.ImageField()
     processed_image = serializers.ImageField(required=False)
+    message = serializers.CharField(required=False)
 
 
 

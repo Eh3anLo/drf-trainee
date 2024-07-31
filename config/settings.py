@@ -131,3 +131,6 @@ MEDIA_ROOT =  str(BASE_DIR.joinpath('media'))
 MEDIA_URL = '/media/'
 
 DOMAIN = "http://127.0.0.1:8000"
+
+CELERY_BROKER_URL = "amqp://guest:guest@localhost:5672/"
+CELERY_RESULT_BACKEND = "rpc://"
