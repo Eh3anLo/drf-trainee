@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password
+
 
 class Field(models.Model):
     FIELDS = {
@@ -14,7 +16,13 @@ class Field(models.Model):
 
 class Person(models.Model):
     person_number = models.CharField(max_length=50, unique=True)
+    password = models.CharField(max_length=128, blank=True)
     field = models.ForeignKey(Field, on_delete=models.DO_NOTHING, null=True)
+
+    def save(self, *args, **kwargs):
+        self.password = make_password(self.password)
+        super(Person, self).save(*args, **kwargs)
+    
     def __str__(self):
         return self.person_number
 

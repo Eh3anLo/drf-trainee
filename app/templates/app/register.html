@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>login page</title>
+</head>
+<body>
+    {% if info == "new_pass" %}
+        <form action="" method="POST">
+            <input name="person_number" type="text" placeholder="شماره تماس">
+            <input type="pss" name="password" placeholder="رمز عبور جدید">
+            <input type="submit" value="ثبت">
+        </form>
+    {% endif %}
+    {% if info == "login" %}
+    <form action="" method="POST">
+        <input name="phone_number" type="text" placeholder="شماره تماس">
+        <input type="password" name="password" placeholder="رمز عبور">
+        <input type="submit" value="ورود">
+    </form>
+    {% endif %}
+</body>
+</html>
