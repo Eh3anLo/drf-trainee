@@ -6,15 +6,17 @@
 </head>
 <body>
     {% if info == "new_pass" %}
-        <form action="" method="POST">
+        <form action="{% url 'register' %}" method="POST">
+            <input type="hidden" name="flag" value="set_pass">
             <input name="person_number" type="text" placeholder="شماره تماس">
             <input type="pss" name="password" placeholder="رمز عبور جدید">
             <input type="submit" value="ثبت">
         </form>
     {% endif %}
     {% if info == "login" %}
-    <form action="" method="POST">
-        <input name="phone_number" type="text" placeholder="شماره تماس">
+    <form action="{% url 'login' %}" method="POST">
+        <input type="hidden" name="flag" value="login">
+        <input name="person_number" type="text" placeholder="شماره تماس">
         <input type="password" name="password" placeholder="رمز عبور">
         <input type="submit" value="ورود">
     </form>

@@ -25,7 +25,12 @@ class Person(models.Model):
     
     def __str__(self):
         return self.person_number
+    
 
+class FaildLogin(models.Model):
+    person_id = models.ForeignKey(Person, on_delete=models.CASCADE)
+    attempt_time = models.DateTimeField(auto_now=True)
 
-
-
+    def __str__(self):
+        return f'{self.person_number} unsuccessfull login on {self.attempt_time}'
+    
